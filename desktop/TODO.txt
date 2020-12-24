@@ -1,5 +1,58 @@
-Fix ghost positioning
-    Base it on height, I guess
+Milestone: housekeeping
+  - Remove Electron from project
+  - Rename "desktop" to "ecmascript"
+  - Plan for classes in C
+    - Visual, Trigger, Billboard
+    - Puzzle class hierarchy
+  - Fix the credits
+    - Make into SVG
+    - Remove font
+  "Migrate" open bugs in Github to sourcehut
 
-Switch JS files to ES6 modules once Electron supports them
-    Already supported by expo.io, supposedly
+Milestone: SDL setup
+  - Main loop
+  - Window titlebar minimize/maximize/close buttons working
+  - Window resize working
+  - Full screen working
+  - Keyboard input detected
+  - Mouse moves detected (for cursor change)
+  - Mouse clicks detected
+  - Portrait command line argument working
+
+Milestone: assets
+  - Music loads, plays and repeats
+  - Images load and appear
+  - SVGs load and appear
+  - SVG color cursor working
+
+Milestone: scene
+  - Stage implemented
+    - Billboard
+    - Trigger
+    - Animations
+  - Trigger clicks >> cout
+  - Render method
+  - Stage properly laid out on window resize
+  - Cursor update implemented
+
+Milestone: traversal
+  - World data implemented
+  - Game state persisted
+    - Everything but puzzle state, for now
+
+Milestone: puzzles
+  - Game should be completable via walkthrough
+
+Milestone: audio system
+  - Sound effects with debounce
+  - Music that repeats
+  - Ambience that repeats
+  - Smooth music and ambience transitions
+
+Milestone: optimize systems
+  - Smarter asset loading/unloading
+  - Keep track of dirty rectangles?
+
+Milestone: mobile device support
+  - Touch event support
+  - Respond to device orientation
