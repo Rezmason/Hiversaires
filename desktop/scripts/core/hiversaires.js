@@ -105,7 +105,6 @@ class Hiversaires {
     this.stage.billboard('clockShadow').alpha = 0
     this.stage.billboard('progressPane').alpha = 0
     this.stage.billboard('ententeScreen').alpha = 0
-    this.stage.billboard('illusion').alpha = 0
 
     this.stage.trigger('action').cursor = null
     this.stage.trigger('action').hidden = true
@@ -115,10 +114,6 @@ class Hiversaires {
       this.currentSubject.type == SubjectType.none
 
     this.stage.billboard('viewMain').image = this.modifierToURL()
-
-    if (Math.random() < 0.3 && this.currentSubject.illusionID != null) {
-      puzzlesByID.get(this.currentSubject.illusionID).appear()
-    }
 
     let lastPuzzle = null
     while (this.currentPuzzle != null && lastPuzzle != this.currentPuzzle) {

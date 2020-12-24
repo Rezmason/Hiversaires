@@ -163,10 +163,6 @@ const nodesByID = (function () {
     })
   }
 
-  const illusion = (subject, illusionID) => {
-    return Object.freeze(Object.assign({ illusionID }, subject))
-  }
-
   const none = Object.freeze({ type: SubjectType.none })
 
   addNode(0, Zone.forest, node(1), none, none, none)
@@ -178,14 +174,14 @@ const nodesByID = (function () {
   addNode(6, Zone.forest, node(7, 1), none, node(5), none)
   addNode(7, Zone.forest, node(12), node(8, 0), terminal(1), node(6, 2))
   addNode(8, Zone.forest, node(9, 2), none, node(7, 3), none)
-  addNode(9, Zone.forest, node(8, 2), illusion(none, 17), node(10, 0), none)
+  addNode(9, Zone.forest, node(8, 2), none, node(10, 0), none)
 
   addNode(10, Zone.forest, node(3, 3), none, node(9, 0), none)
   addNode(11, Zone.forest, door(25, 48, 2), none, node(3), none)
   addNode(12, Zone.forest, door(3, 13), none, node(7), node(14, 0))
   addNode(13, Zone.studio, node(17), node(15), door(3, 12), terminal(2))
   addNode(14, Zone.forest, node(18), none, node(12, 1), none)
-  addNode(15, Zone.studio, illusion(node(16), 17), none, none, node(13))
+  addNode(15, Zone.studio, node(16), none, none, node(13))
   addNode(16, Zone.studio, node(21), door(7, 22), node(15), node(17))
   addNode(17, Zone.studio, node(20), node(16), node(13), none)
   addNode(18, Zone.forest, terminal(31), terminal(2), node(14), none)
@@ -205,8 +201,7 @@ const nodesByID = (function () {
   addNode(30, Zone.circular, node(29), none, node(23), none)
   addNode(31, Zone.circular, node(25, 1), none, node(35), none)
   addNode(32, Zone.metamondst, none, node(52), none, node(27, 1))
-  const node33Illusion = illusion(node(29, 1), 17)
-  addNode(33, Zone.circular, terminal(14), none, node33Illusion, none)
+  addNode(33, Zone.circular, terminal(14), none, node(29, 1), none)
   addNode(34, Zone.entente, terminal(37), none, none, node(39))
   addNode(35, Zone.stones, door(8, 31, 0), node(38), node(36), none)
   addNode(36, Zone.stones, node(35), node(37), none, none)
@@ -218,7 +213,7 @@ const nodesByID = (function () {
   addNode(40, Zone.stones, node(39), none, node(41), none)
   addNode(41, Zone.stones, node(40), none, none, node(42))
   addNode(42, Zone.stones, none, node(41), node(44), node(43))
-  addNode(43, Zone.stones, none, node(42), illusion(none, 17), terminal(35))
+  addNode(43, Zone.stones, none, node(42), none, terminal(35))
   addNode(44, Zone.stones, node(42), none, node(46), none)
   addNode(45, Zone.rainre, terminal(13), none, terminal(1), node(39))
   addNode(46, Zone.stones, node(44), none, door(15, 85, 2), none)
@@ -233,10 +228,10 @@ const nodesByID = (function () {
   addNode(55, Zone.antechannel, terminal(39), node(56), node(53), node(54))
   addNode(56, Zone.antechannel, node(58), none, node(84), node(55))
   addNode(57, Zone.antechannel, node(59), none, node(54), none)
-  addNode(58, Zone.antechannel, node(60), illusion(none, 17), node(56), none)
+  addNode(58, Zone.antechannel, node(60), none, node(56), none)
   addNode(59, Zone.antechannel, node(61), none, node(57), none)
 
-  addNode(60, Zone.antechannel, node(62), none, node(56, null, true), none) // probably a bug; check with IOO⠛
+  addNode(60, Zone.antechannel, node(62), none, node(56, null, true), none) // Feature, not a bug!
   addNode(61, Zone.antechannel, none, none, node(59), door(19, 72))
   addNode(62, Zone.antechannel, door(26, 77), none, node(60), none)
   addNode(63, Zone.metamondst, node(73), node(69), none, node(67))
@@ -246,7 +241,7 @@ const nodesByID = (function () {
 
   addNode(70, Zone.metamondst, node(75), node(67), none, none)
   addNode(72, Zone.metamondst, none, node(61), none, node(69))
-  addNode(73, Zone.metamondst, node(81), none, illusion(node(63), 17), none)
+  addNode(73, Zone.metamondst, node(81), none, node(63), none)
   addNode(74, Zone.metamondst, node(80), none, node(67), none)
   addNode(75, Zone.metamondst, node(76), none, node(70), none)
   addNode(76, Zone.metamondst, none, none, node(75), door(30, 87))
@@ -262,14 +257,13 @@ const nodesByID = (function () {
   addNode(85, Zone.metamondst, door(15, 46, 0), none, node(80), node(86))
   addNode(86, Zone.metamondst, none, node(85), none, terminal(1))
   addNode(87, Zone.capsule, node(79), door(30, 76), none, node(88))
-  addNode(88, Zone.capsule, none, node(87), none, illusion(node(141), 17))
+  addNode(88, Zone.capsule, none, node(87), none, node(141))
 
   const node89Maze = maze(node(103), 42, MazeAxis.x, MazeEffect.decr, 1)
   addNode(89, Zone.entente, node89Maze, none, node(90), none)
   addNode(90, Zone.entente, node(89), none, node(91), none)
-  const node91Illusion = illusion(node(90), 17)
   const node91Maze = maze(node(103), 42, MazeAxis.x, MazeEffect.incr, 3, 92)
-  addNode(91, Zone.entente, node91Illusion, terminal(23), node91Maze, none)
+  addNode(91, Zone.entente, node(90), terminal(23), node91Maze, none)
   addNode(103, Zone.entente, node(91), none, node(89), none)
 
   addNode(92, Zone.entente, node(91), none, node(93), none)
@@ -299,7 +293,7 @@ const nodesByID = (function () {
 
   addNode(112, Zone.nataniev, node(115), node(113), none, door(33, 79))
   addNode(113, Zone.nataniev, node(114), terminal(36), door(40, 50), node(112))
-  addNode(114, Zone.nataniev, none, none, illusion(node(113), 17), node(115))
+  addNode(114, Zone.nataniev, none, none, node(113), node(115))
   addNode(115, Zone.nataniev, none, node(114), node(112), none)
   addNode(116, Zone.entente, none, none, none, node(20, 2))
 
@@ -344,7 +338,7 @@ const puzzlesByID = (function () {
   addPuzzle(new KillTerminal(14, 50))
   addPuzzle(new SealDoor(15, [act2Lock, act4Lock], 1))
   addPuzzle(new ProgressTerminal(16))
-  addPuzzle(new Illusion(17))
+  // We removed puzzle 17 (the illusion puzzle)
   addPuzzle(new EnergyTerminal(18))
   addPuzzle(new EnergyDoor(19, [18]))
   addPuzzle(new SealTerminal(20, Zone.metamondst))
@@ -378,7 +372,6 @@ const createDefaultState = function () {
   const state = {
     seals: new Set(),
     fuses: new Set(),
-    illusions: new Set(),
     clock: 0,
     audio: true,
     studio: false,

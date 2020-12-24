@@ -90,19 +90,6 @@ class Interface {
     hiversaires.stage.fadeOut(hiversaires.stage.billboard('hudAudio'), 0.5, 3)
   }
 
-  showIllusion () {
-    hiversaires.stage.billboard('hudIllusion').image =
-      'interface/illusion.' +
-      hiversaires.game.puzzleState.illusions.size +
-      '.svg'
-    hiversaires.stage.billboard('hudIllusion').alpha = 1
-    hiversaires.stage.fadeOut(
-      hiversaires.stage.billboard('hudIllusion'),
-      0.5,
-      3
-    )
-  }
-
   hideMenu () {
     hiversaires.stage.billboard('menuBlack').hidden = true
     hiversaires.stage.billboard('menuCredit1').hidden = true

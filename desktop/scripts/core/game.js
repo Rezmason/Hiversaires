@@ -57,7 +57,6 @@ class Game {
 
     saveObject.puzzleState.seals = Array.from(this.puzzleState.seals)
     saveObject.puzzleState.fuses = Array.from(this.puzzleState.fuses)
-    saveObject.puzzleState.illusions = Array.from(this.puzzleState.illusions)
 
     if (!DEBUG_DONT_SAVE) {
       this.savedData = saveObject
@@ -83,7 +82,6 @@ class Game {
       this.puzzleState = Object.assign({}, saveObject.puzzleState)
       this.puzzleState.seals = new Set(saveObject.puzzleState.seals)
       this.puzzleState.fuses = new Set(saveObject.puzzleState.fuses)
-      this.puzzleState.illusions = new Set(saveObject.puzzleState.illusions)
 
       console.log('loaded state.')
 

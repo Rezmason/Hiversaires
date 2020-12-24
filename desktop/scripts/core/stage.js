@@ -31,7 +31,6 @@ class Stage {
       'viewMain',
       'modifier',
       'vignette',
-      'illusion',
       'menuBlack',
       'menuCredit1',
       'menuCredit2',
@@ -52,7 +51,6 @@ class Stage {
       'hudSeal2',
       'hudAudio',
       'hudSave',
-      'hudIllusion',
       'hudStepRight',
       'hudStepForward',
       'hudStepLeft'
