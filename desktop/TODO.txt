@@ -1,5 +1,4 @@
 Milestone: housekeeping
-  - Remove Electron from project
   - Rename "desktop" to "ecmascript"
   - Plan for classes in C
     - Visual, Trigger, Billboard

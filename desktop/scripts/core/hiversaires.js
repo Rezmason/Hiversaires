@@ -14,7 +14,7 @@ class Hiversaires {
     this.interface = new Interface()
     this.walkthrough = new Walkthrough(this.responder.bind(this))
     this.cartographer = new Cartographer()
-    this.controller = new Controller()
+    // this.controller = new Controller()
   }
 
   start () {
@@ -23,6 +23,7 @@ class Hiversaires {
     this.refreshNode()
     this.interface.showHomeMenu()
 
+    /*
     this.controller.add('default', '*', 'About', () => { require('electron').shell.openExternal('https://hundredrabbits.itch.io/hiversaires') }, 'CmdOrCtrl+,')
     this.controller.add('default', '*', 'Fullscreen', () => { app.toggle_fullscreen() }, 'CmdOrCtrl+Enter')
     this.controller.add('default', '*', 'Hide', () => { app.toggle_visible() }, 'CmdOrCtrl+H')
@@ -37,6 +38,7 @@ class Hiversaires {
     this.controller.add('default', 'Move', 'Turn Right', () => { this.moveRight() }, 'D')
 
     this.controller.commit()
+    */
   }
 
   get currentNode () {
