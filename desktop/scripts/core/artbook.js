@@ -21,11 +21,13 @@ class ArtBook {
   }
 
   preloadArt (assetURL) {
+    /*
     const img = new Image()
     img.onload = function () {
       img.onload = null
     }
     img.src = assetURL
+    */
   }
 
   setArt (selector, assetURL) {

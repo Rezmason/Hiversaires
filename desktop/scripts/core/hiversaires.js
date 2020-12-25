@@ -39,6 +39,16 @@ class Hiversaires {
 
     this.controller.commit()
     */
+
+    if (PRELOAD_ALL) {
+      const preloads = document.createElement("preloads")
+      document.body.appendChild(preloads)
+      for (const filename of nodeAssetMap.values()) {
+        const preload = document.createElement("preload")
+        preloads.appendChild(preload)
+        this.artBook.setArt(preload, 'media/graphics/' + 'node_render/' + filename)
+      }
+    }
   }
 
   get currentNode () {
